@@ -1,0 +1,98 @@
+<html>
+  <head>
+     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700italic' rel='stylesheet' type='text/css'>
+      <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+      <script type="text/javascript" src="bower_components/angular/angularAnimate.js"></script>
+      <script type="text/javascript" src="js/hatrapp.js"></script>
+      <script type="text/javascript" src="js/hatrcontrollers.js"></script>
+      <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+              <meta name="viewport" content="width=device-width, user-scalable=no">
+  </head>
+<body ng-app="hatr"   ng-controller="reviews" id='bc' style='background-image:url({{currentPic}});background-size:cover;'>
+    <div id="container"></div>
+    <div>
+        <h1 class='reviewText'>" {{currentReview.text}} "</h1>
+        <span class='authorName'>-{{currentReview.author_name}}</span>
+        <span class='locationName'>{{currentReview.locationName}}</span>
+		<button ng-click="nextReview()"> Next Shitty Review </button>
+    </div>
+  <script>
+  //set map as node where to render page content
+  var map = document.getElementById('container');
+  console.log(map);
+  </script>
+    <style>
+        body{
+        
+			background-size: 900px 900px;
+            font-family: 'Playfair Display';
+			color:#333;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			align-content: center;
+			background-image: url('https://download.unsplash.com/reserve/RONyPwknRQOO3ag4xf3R_Kinsey.jpg');
+			background-color: #f06262;
+			background-size: cover;
+        }
+        
+        .reviewText{
+            color:#fcfcfc;
+            font-weight: 100;
+            text-shadow: 2px 2px 2px #000;
+            text-align: center;
+			font-size: 7vmin;
+			flex: 1;
+			width:80%;
+			margin: 0px auto;
+			font-style: italic;
+
+        }
+		.authorName{
+			font-size: 3vmin;
+			text-align: center;
+			width: 80%;
+			position: relative;
+			display: table;
+			margin: 0px auto;
+			text-shadow: 2px 2px 2px #000;
+  			color: #fff;
+		}
+		
+		.locationName{
+			font-size: 3vmin;
+			margin: 0px auto;
+			display: table;
+			font-weight: 400;
+			text-shadow: 2px 2px 2px #000;
+  			color: #fff;
+		}
+		
+		button{
+			width: 15em;
+			position: relative;
+			display: table;
+			margin: 0px auto;
+			margin-top: 1em;
+			background: none;
+			font-family: 'open sans';
+			border: none;
+			color:#fff;
+			border: 3px solid #fff;
+			height:4em;
+			font-size: 1em;
+			transition: .5s;
+			cursor: pointer;
+			
+		}
+		
+		button:hover{
+			border-radius: 2em;
+		}
+        
+    
+    </style>
+</body>
+</html>
